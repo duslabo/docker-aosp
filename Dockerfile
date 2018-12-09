@@ -1,20 +1,22 @@
 
 # This generates a docker image used for building aosp
 
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 
 LABEL maintainer="Prasant Jalan <prasant.jalan@gmail.com>"
 
 RUN apt-get update
 
 RUN apt-get install --quiet -y \
-	apt-get install openjdk-8-jdk
+	apt-get install openjdk-7-jdk
 
 RUN apt-get install --quiet -y \
-	git-core gnupg flex bison gperf build-essential zip curl \
-	zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 \
-	lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev \
-	libgl1-mesa-dev libxml2-utils xsltproc unzip
+	git-core gnupg flex bison gperf libsdl1.2-dev \
+	libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential zip curl \
+	libncurses5-dev zlib1g-dev pngcrush schedtool libxml2 libxml2-utils \
+	xsltproc lzop libc6-dev schedtool g++-multilib lib32z1-dev \
+	lib32ncurses5-dev lib32readline-gplv2-dev gcc-multilib libswitch-perl \
+	libssl1.0.0 libssl-dev genisoimage
 
 RUN apt-get install --quiet -y \
 	vim \
