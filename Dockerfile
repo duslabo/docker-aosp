@@ -8,7 +8,7 @@ LABEL maintainer="Prasant Jalan <prasant.jalan@gmail.com>"
 RUN apt-get update
 
 RUN apt-get install --quiet -y \
-	apt-get install openjdk-8-jdk
+	openjdk-8-jdk
 
 RUN apt-get install --quiet -y \
 	git-core gnupg flex bison gperf build-essential zip curl \
