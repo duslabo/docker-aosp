@@ -20,10 +20,12 @@ RUN apt-get install --quiet -y \
 
 RUN apt-get install --quiet -y \
 	vim \
-	u-boot-tools
+	u-boot-tools \
+	bc
 
 RUN id build 2>/dev/null || useradd --uid 1000 --create-home build
 RUN echo "build ALL=(ALL) NOPASSWD: ALL" | tee -a /etc/sudoers
+RUN echo 'alias l="ls -allFh"' >> ~/.bashrc
 
 RUN apt -y install locales && \
   dpkg-reconfigure locales && \
