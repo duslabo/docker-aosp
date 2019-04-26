@@ -8,7 +8,7 @@ LABEL maintainer="Prasant Jalan <prasant.jalan@gmail.com>"
 RUN apt-get update
 
 RUN apt-get install --quiet -y \
-	openjdk-7-jdk
+	openjdk-8-jdk
 
 RUN apt-get install --quiet -y \
 	git-core gnupg flex bison gperf libsdl1.2-dev \
